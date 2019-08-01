@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatty</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/chat.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div style="margin-top: 30px;margin-bottom: 30px;">
+        <div class="row">
+            <div class="col-10">
+                <h1>Hello, <span id="myUsername"></span></h1>
+            </div>
+            <div class="col-2 text-right">
+                <a href="/logout">Logout </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content container-fluid bootstrap snippets">
+    <div class="row row-broken">
+        <div class="col-sm-3 col-xs-12">
+            <div class="col-inside-lg decor-default chat" style="overflow: hidden; outline: none;" tabindex="5000">
+                <div class="chat-users">
+                    <div class="user" id="Public" data-username="public">
+                        <div class="name">PUBLIC CHAT</div>
+                        <div class="mood">Online</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9 col-xs-12 chat message-container" style="overflow: hidden; outline: none;" tabindex="5001">
+            <div class="col-inside-lg decor-default">
+                <div id="chatMessages" class="chat-body">
+                    <h5 id="chatTitle">Public</h5>
+                    <div class="answer-add">
+                        <input id="messageInput" placeholder="Write a message">
+                        <span id="submitMessage" class="answer-btn answer-btn-2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.8-fix/jquery.nicescroll.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="js/chat.js"></script>
+<script src="https://momentjs.com/downloads/moment.min.js"></script>
+</html>
